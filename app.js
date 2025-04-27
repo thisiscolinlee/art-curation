@@ -8,15 +8,15 @@ const connectDb = require('./config/db');
 const app = express();
 const port = process.env.PORT || 3000;
 
+// DB 연결
 connectDb();
 
+// 미들웨어 설정
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
 app.set('views', './views');
-
 app.use(express.static('images'));
 app.use(express.static('public'));
-
 app.use(express.json());
 app.use(express.urlencoded( { extended: true} ));
 
@@ -24,7 +24,6 @@ app.use(express.urlencoded( { extended: true} ));
 //app.use(methodOverride('_method'));
 
 app.use('/', require('./routes/main'));
-app.use('/', require('./routes/admin'));
 
 /*
 app.use((req, res, next) => { // 404 처리 부분
