@@ -43,20 +43,13 @@ function pageStatus(mode){
 
 
 $(document).ready(function() {
-  // 페이지 로드 후 3초 후에 애니메이션 시작
   setTimeout(function() {
     $('#startPage').fadeOut(1000, function() {
     });
-
-  }, 3000);  // 3초 후에 실행
-
+  }, 2000);
   setTimeout(function() {
-    // #startPage에서 blur를 0px로 변환
-    $('#mapPage').css({
-      'filter': 'blur(0px)',
-      'transform': 'scale(1)'
-    });
-  }, 3500);  // 3초 후에 실행
+    $('#mapPage').css('display', 'flex').animate({opacity: 1}, 1400);
+  }, 3500);
 });
 
 
