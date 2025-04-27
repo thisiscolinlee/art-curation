@@ -1,0 +1,218 @@
+
+/*
+@media (min-width: 0) and (max-width: 700px) {
+  .search-input{
+    height: calc(var(--top-nav-height) - 1.8rem)!important;
+    width: 100%!important; max-width: 100%!important;
+    padding: 0 calc(var(--search-button-width)*1.2) 0 1rem!important;
+    font: 500 2.3rem/1 var(--font-basic)!important;}
+  .search-icon.show{
+    transform: translate(-1.6rem, 1.8rem) scale(0.7)!important;
+    filter: invert(1) blur(0)!important;}
+
+  .admin-post .post-content{
+    max-width: calc(100% - 2.6rem)!important;
+    align-self: center!important;
+    margin: 0 1.3rem;
+  }
+  .admin-post .post-title{font: 600 2rem/1.2 var(--font-basic);}
+  main{padding: var(--top-nav-height) 0 0 0;}
+
+  .post-file-alt{font: 500 1.6rem/1.2 var(--font-basic);}
+}
+
+
+@media (min-width: 701px) {
+  main{padding: calc(var(--top-nav-height)) 0 0 0;}
+  .search-input{width: calc(100% - 6.5rem - var(--search-button-width))!important; }
+  .search-icon.show{
+    transform: translate(-1.3rem, 1.3rem) scale(0.65)!important;
+    filter: invert(1) blur(0)!important;
+  }
+
+  .post-file-alt{font: 500 1.9rem/1.2 var(--font-basic);}
+}
+*/
+
+
+/*----Devices----*/
+/* None IOS  @supports not (-webkit-overflow-scrolling: touch) {
+  .gradient-blur{display: none;}
+  PC @media (hover: hover) and (pointer: fine) {.gradient-blur{display: block;}}}*/
+/* IOS */ @supports (-webkit-overflow-scrolling: touch) {.gradient-blur{display: block!important;}}
+
+
+/*Mobile*/
+/*----------NOT WORKING IN ANDROID PHONE ZFLIP, S23----------*/
+@media (hover: none) and (pointer: coarse) {}
+
+/*PC*/
+@media (hover: hover) and (pointer: fine) {
+  html{touch-action: none;}
+  a:hover{color: var(--color-black);}
+}
+
+/*Web App*/
+@media all and (display-mode: standalone) {
+  /*PC*/
+  @media (hover: hover) and (pointer: fine) {
+    .text-input::-webkit-scrollbar {display: block!important; width: 3rem;}
+    .text-input::-webkit-scrollbar-thumb {background: var(--color-white); width: 1.6rem; border: 0.7rem solid var(--color-black);}
+  }
+  /*Only Mobile*/
+  @media (hover: none) and (pointer: coarse) {
+    /* IOS */ 
+    @supports (-webkit-overflow-scrolling: touch) {
+      :root {--default-padding: 2.5rem!important;}
+    }
+  }
+}
+
+
+
+:root {
+  --font-basic: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+
+  --default-padding: 1.3rem;
+  --nav-default-height: 8rem;
+
+  --color-white: #fff;
+  --color-black: #000000;
+  --color-grey: grey;
+
+  --color-red : rgb(206,74,74);
+  --color-yellow: rgb(234,175,65);
+  --color-green: rgb(72,165,106);
+  --color-blue: rgb(102,136,195);
+  --color-purple: rgb(178,93,166);
+}
+
+a{color: var(--color-black);
+text-decoration: none!important;}
+a:visited{color: var(--color-black)!important}
+
+body,html{
+  background-color: var(--color-white);
+  width: calc(100*var(--vw));
+  height: calc(var(--vh) * 100);
+  touch-action: pan-x pan-y;
+
+  word-break: keep-all;
+  word-wrap: normal;
+
+  overflow-x: overlay;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
+  
+  -webkit-user-drag: none;
+}
+
+*{
+  scroll-behavior: smooth;
+
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", 
+  "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !important;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  -webkit-transform-origin-z: 0;
+  letter-spacing: -0.08rem;
+  border: none;
+  list-style: none;
+
+  -webkit-tap-highlight-color: transparent;
+  caret-color: var(--color-black);
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+*::-webkit-scrollbar{
+  display: none;
+}
+*::selection{
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+input{background-color: transparent;}
+
+
+
+#page{
+  height: calc(100*var(--vh));
+  width: calc(100*var(--vw));
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+}
+
+
+#mapPageIcon{
+  position: absolute;
+  transition: 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+
+  border: solid black 2px;
+  width: 4rem;
+  height: 4rem;
+  inset: 4rem 4rem auto auto;
+}
+#descriptionPageIcon{
+  position: absolute;
+  transition: 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+
+  border: solid black 2px;
+  width: 4rem;
+  height: 4rem;
+  inset: 9rem 4rem auto auto;
+}
+
+#mapPage {
+  display: flex;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  width: 100%;
+  height: 100vh; /* 혹은 원하는 높이 */
+  overflow: hidden;
+}
+
+#mapContent {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+#mapSVG {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+#descriptionPage{
+  overflow: scroll;
+  position: relative;
+  transition: 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+
+
+
+#description{
+  position: relative;
+  padding: 4rem;
+  font: 600 1.4rem/1.5 var(--font-basic);
+}
+
+p {
+  font-size: 24px;
+  line-height: 1.5;
+}
+.fade-in {
+  opacity: 0;
+  display: inline-block;
+  transition: opacity 0.4s ease;
+}
+.fade-in.show {
+  opacity: 1;
+}
