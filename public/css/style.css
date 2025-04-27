@@ -186,13 +186,13 @@ input{background-color: transparent;}
   max-width: 20rem;
   max-height: 20rem;
 
-  border: 5px solid black;
+  border: 8px solid black;
   position: relative;
 }
 
 .room .number {
   position: absolute;
-  font: 600 3rem/1 var(--font-basic);
+  font: 700 3rem/1 var(--font-basic);
   color: black;
   width: fit-content; height: fit-content;
 }
