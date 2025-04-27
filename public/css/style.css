@@ -4,7 +4,7 @@
   .search-input{
     height: calc(var(--top-nav-height) - 1.8rem)!important;
     width: 100%!important; max-width: 100%!important;
-    padding: 0 calc(var(--search-button-width)*1.2) 0 1rem!important;
+    padding: 0 calc(var(--search-button-width)*1.2) 0 0.7rem!important;
     font: 500 2.3rem/1 var(--font-basic)!important;}
   .search-icon.show{
     transform: translate(-1.6rem, 1.8rem) scale(0.7)!important;
@@ -110,8 +110,6 @@ body,html{
 *{
   scroll-behavior: smooth;
 
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", 
-  "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !important;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -148,10 +146,81 @@ input{background-color: transparent;}
 }
 
 
+#startPage{
+  position: fixed;
+  height: calc(100*var(--vh));
+  width: calc(100*var(--vw));
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+}
+#logoSVG {
+  position: fixed;
+  inset: auto;
+  width: calc(30*var(--vw));
+  height: auto;
+  display: block;
+}
+
+
+
+#mapPage {
+  display: flex;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  width: 100%;
+  height: 100vh; /* 혹은 원하는 높이 */
+  filter: blur(30px);
+  transform: scale(0.6);
+  transition: filter 1s ease, transform 1.5s cubic-bezier(0.23, 1, 0.320, 1); /* filter와 transform 모두 transition 적용 */
+
+  overflow: hidden;
+}
+#mapContent {
+  max-width: 70%;
+  max-height: 70%;
+}
+
+.room {
+  width: 80vw;
+  height: 60vw;
+  max-width: 1200px;
+  max-height: 900px;
+  border: 5px solid black;
+  position: relative;
+}
+
+.room .number {
+  position: absolute;
+  font: 600 3rem/1 var(--font-basic);
+  color: black;
+  width: fit-content; height: fit-content;
+}
+.number1 { top: 0.7rem; left: 0.7rem; }
+.number2 { top: 0.7rem; left: calc(50% - 0.7rem); }
+.number3 { top: 0.7rem; right: 0.7rem; }
+.number4 { bottom: 0.7rem; left: 0.7rem; }
+.number5 { bottom: 0.7rem; left: calc(50% - 0.7rem); }
+.number6 { bottom: 0.7rem; right: 0.7rem; }
+
+
+#mapSVG {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
 #mapPageIcon{
   position: absolute;
   transition: 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-
   border: solid black 2px;
   width: 4rem;
   height: 4rem;
@@ -165,29 +234,6 @@ input{background-color: transparent;}
   width: 4rem;
   height: 4rem;
   inset: 9rem 4rem auto auto;
-}
-
-#mapPage {
-  display: flex;
-  padding: 0.5rem;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-
-  width: 100%;
-  height: 100vh; /* 혹은 원하는 높이 */
-  overflow: hidden;
-}
-
-#mapContent {
-  max-width: 90%;
-  max-height: 90%;
-}
-
-#mapSVG {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 #descriptionPage{
   overflow: scroll;

@@ -1,7 +1,6 @@
 $(window).on('load resize', function() {
   setWidthHeight()
   typeText("우리가 이 외부의 영향력으로부터 해방될 수 없다면, 개인이 ‘더 나은’ 상태를 위해 노력한다는 것은 무슨 의미인가? 신작에서 작가는 소원을 빌며 혹은 소원 성취에 감사하며 바치는 사물, 곧 봉헌물에 주목한다. 서로를 위하는 친구들의 목소리가 새겨진 물질로 떠 낸 작가의 두상, 행복에 대한 바람을 담아 빚은 신체 조각은 일종의 봉헌물이다. 전작들에서 끝내 파괴되곤 하던 물질은 이제 외부의 작용을 수용하고 스스로 변화하는 능동적인 힘, 즉 ‘가소성’을 가진 것으로 탈바꿈한다. 형태와 물질에 무관하게 친구들의 마음이 전해지고 간절한 기원을 담은 사물이 마음을 위안하듯 말이다. 작품은 나를 강제하는 힘에 대한 진술로부터 나를 지탱하는 힘에 대한 증언으로 이행한다. 고립의 시간을 지나온 조각에 다정한 진심이 녹아든다.");
-  pageStatus(3)
 });
 
 
@@ -20,7 +19,7 @@ $('#mapPageIcon').click(function(){
 })
 */
 
-
+/*
 function pageStatus(mode){
   if(mode == 0){
     $('#mapPage, #descriptionPage').css({'width':`0`,'height':`0`,'border':`none`,'content-visibility':'none'})
@@ -40,6 +39,25 @@ function pageStatus(mode){
     $('#mapPage').css({'border-bottom':`solid 2px black`})
   }
 }
+*/
+
+
+$(document).ready(function() {
+  // 페이지 로드 후 3초 후에 애니메이션 시작
+  setTimeout(function() {
+    $('#startPage').fadeOut(1000, function() {
+    });
+
+  }, 3000);  // 3초 후에 실행
+
+  setTimeout(function() {
+    // #startPage에서 blur를 0px로 변환
+    $('#mapPage').css({
+      'filter': 'blur(0px)',
+      'transform': 'scale(1)'
+    });
+  }, 3500);  // 3초 후에 실행
+});
 
 
 
