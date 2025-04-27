@@ -1,7 +1,7 @@
 {
-  "name": "급식 지도",
-  "short_name": "‎",
-  "start_url": "https://port-0-samgoe-5b8v2nlsbw0v7k.sel5.cloudtype.app/enter",
+  "name": "What is This?",
+  "short_name": "WIT",
+  "start_url": "https://port-0-art-curation-5b8v2nlsbw0v7k.sel5.cloudtype.app/",
   "display": "standalone",
   "orientation": "portrait-primary",
 

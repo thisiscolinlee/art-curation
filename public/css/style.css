@@ -170,7 +170,6 @@ input{background-color: transparent;}
 
 #mapPage {
   display: flex;
-  padding: 0.5rem;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -183,16 +182,13 @@ input{background-color: transparent;}
 
   overflow: hidden;
 }
-#mapContent {
-  max-width: 70%;
-  max-height: 70%;
-}
 
 .room {
   width: 80vw;
-  height: 60vw;
-  max-width: 1200px;
-  max-height: 900px;
+  aspect-ratio: 4/3!important;
+  max-width: 20rem;
+  max-height: 20rem;
+
   border: 5px solid black;
   position: relative;
 }
